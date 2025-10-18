@@ -12,3 +12,7 @@ function getComputerChoice(){
     }
 }
 
+function getHumanChoice(){
+    let ingreso = prompt("Ingrese piedra, papel o tijera").toLowerCase();
+    return ingreso
+}
