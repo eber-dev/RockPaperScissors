@@ -4,16 +4,20 @@ function getComputerChoice(){
     let opciones = Math.floor(Math.random()*3)+1
     switch(opciones){
         case 1:
+            console.log("Computer selection: piedra")
             return "piedra"
         case 2:
+            console.log("Computer selection: papel")
             return "papel"
         case 3:
+            console.log("Computer selection: tijera")
             return "tijera"
     }
 }
 
 function getHumanChoice(){
     let ingreso = prompt("Ingrese piedra, papel o tijera").toLowerCase();
+    console.log("Tu eleccion: ",ingreso)
     return ingreso
 }
 const humanSelection = getHumanChoice();
