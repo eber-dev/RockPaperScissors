@@ -16,50 +16,53 @@ function getHumanChoice(){
     let ingreso = prompt("Ingrese piedra, papel o tijera").toLowerCase();
     return ingreso
 }
-
-function playRound(humanChoice, computerChoice){
-    if(humanSelection && computerSelection == "tijera"){
-        console.log("Empate")
-    }
-    if(humanSelection == "tijera" && computerSelection == "papel"){
-        console.log("Tu ganas, Tijera vence al papel")
-        humanScore+=1;
-    } 
-    if(humanSelection == "tijera" && computerSelection == "piedra"){
-        console.log("Pierdes, Piedra vence a tijera")
-        computerScore+=1;
-    } 
-
-    if(humanSelection == "piedra" && computerSelection == "piedra"){
-        console.log("Empate")
-    } 
-
-    if(humanSelection == "piedra" && computerSelection == "tijera"){
-        console.log("Tu ganas, Piedra vence a tijera")
-        humanScore+=1;
-    } 
-    
-    if(humanSelection == "piedra" && computerSelection == "papel"){
-        console.log("Pierdes, Papel vence a piedra")
-        computerScore+=1;
-    }
-
-    if(humanSelection == "papel" && computerSelection == "papel"){
-        console.log("Empate")
-    }
-
-    if(humanSelection == "papel" && computerSelection == "piedra"){
-        console.log("Tu ganas, Papel vence a piedra")
-        humanScore+=1;
-    }
-
-    if(humanSelection == "papel" && computerSelection == "tijera"){
-        console.log("Pierdes, Tijera vence a piedra")
-        computerScore+=1;
-    }
-}
-
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
+function playRound(humanChoice, computerChoice){
+    switch(humanSelection){
+        case "piedra":
+            if(computerSelection === "piedra"){
+                console.log("empate")
+            }
+            if(computerSelection === "papel"){
+                console.log("pierdes")
+            }
+            if(computerSelection === "tijera"){
+                console.log("ganas")
+            }
+            break;
+        case "papel":
+            if(computerSelection === "piedra"){
+                console.log("ganas")
+            }
+            if(computerSelection === "papel"){
+                console.log("empate")
+            }
+            if(computerSelection === "tijera"){
+                console.log("pierdes")
+            }
+            break;
+        case "tijera":
+            if(computerSelection === "piedra"){
+                console.log("pierdes")
+            }
+            if(computerSelection === "papel"){
+                console.log("ganas")
+            }
+            if(computerSelection === "tijera"){
+                console.log("empate")
+            }
+            break;
+        default:
+            console.log("La opcion ingresada no es correcta")
+    }
+}
+
+
+
 playRound(humanSelection, computerSelection);
+
+function playGame(){
+
+}
