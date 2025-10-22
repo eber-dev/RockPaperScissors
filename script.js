@@ -16,10 +16,10 @@ function getHumanChoice(){
     let ingreso = prompt("Ingrese piedra, papel o tijera").toLowerCase();
     return ingreso
 }
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+let humanSelection = getHumanChoice;
+let computerSelection = getComputerChoice;
 
-function playRound(humanChoice, computerChoice){
+function playRound(humanSelection, computerSelection){
     switch(humanSelection){
         case "piedra":
             if(computerSelection === "piedra"){
@@ -83,4 +83,20 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
-playRound(humanSelection,computerSelection)
+function playGame(){
+    for(let i = 0; i<5; i++){
+        playRound(humanSelection(),computerSelection())
+    }
+    console.log("TU: ",humanScore)
+    console.log("PC: ",computerScore)
+
+    if(humanScore>computerScore){
+        console.log("El resutado final es tu ganas la partida")
+    }else if(humanScore<computerScore){
+        console.log("El resultado final es la PC gana")
+    }else{
+        console.log("El resultado general es empate")
+    }
+}
+
+playGame()
