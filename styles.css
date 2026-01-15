@@ -20,6 +20,7 @@ body{
 
 .titulo{
     text-align: center;
+    margin: 0;
 }
 
 .figura{
@@ -31,8 +32,8 @@ body{
 .imagen{
     width: 720px;
     height: auto;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border: 1px solid blue;
 }
 
@@ -50,3 +51,22 @@ body{
     font-size: 16px;
     padding:5px;
 }
+
+.campo{
+    border: 1px solid black;
+}
+
+.ronda{
+    border: 1px solid black;
+}
+
+.marcador{
+    border: 1px solid black;
+    white-space: pre-line;
+}
+
+.elecciones{
+    border: 1px solid black;
+    white-space: pre-line;
+}
+

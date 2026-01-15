@@ -12,18 +12,16 @@ function getComputerChoice(){
 
 const container = document.querySelector(".container")
 const botones = document.querySelectorAll(".btn")
+const campo = document.querySelector(".campo")
+const ronda = document.querySelector(".ronda")
+const marcador = document.querySelector(".marcador")
+const elecciones = document.querySelector(".elecciones")
+const mensaje  = document.querySelector(".mensaje")
+
 let contador = 1
 let puntaje_humano = 0
 let puntaje_pc = 0
 let puntaje_jugadores = new Array(2)
-
-const campo = document.createElement("div")
-campo.classList.add("campo")
-campo.style.border = "1px solid black"
-campo.style.display = "flex"
-campo.style.flexDirection = "row"
-campo.style.justifyContent = "center"
-campo.style.whiteSpace = "pre-line"
 
 function comparar(a,b){
     switch(a){
@@ -97,11 +95,13 @@ function final(a){
         console.log(`PC: ${a[1]}`)
         console.log(`TU: ${a[0]}`)
         console.log("TU GANAS")
+        return "PLAYER"
     }
     if(a[0]<a[1]){
         console.log(`PC: ${a[1]}`)
         console.log(`TU: ${a[0]}`)
         console.log("TU PIERDES")
+        return "PC"
     }
 }
 
@@ -111,19 +111,21 @@ botones.forEach((btn)=>{
         let computerSelection = getComputerChoice()
         let comparacion = comparar(valor,computerSelection)
         puntaje_jugadores = puntaje(comparacion)
-        console.log(`Ronda ${contador}`)
+        ronda.textContent = `RONDA: ${contador}`
+        marcador.textContent =`PC: ${puntaje_pc}
+        PLAYER: ${puntaje_humano}`
+        elecciones.textContent =`Su eleccion es: ${valor}
+        La eleccion de la Pc es: ${computerSelection}`
+        mensaje.textContent = `${comparacion} esta ronda`
         contador++
         if(contador >= 6){
             botones.forEach((btn)=>{
                 btn.disabled=true
             })
-            final(puntaje_jugadores)
+            let ganador = final(puntaje_jugadores)
+            mensaje.textContent = `EL GANADOR FINAL ES: ${ganador}`
         }
     })
 })
 
-
-   
-
-container.appendChild(campo)
 
