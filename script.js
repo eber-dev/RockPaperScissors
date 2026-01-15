@@ -95,13 +95,17 @@ function final(a){
         console.log(`PC: ${a[1]}`)
         console.log(`TU: ${a[0]}`)
         console.log("TU GANAS")
-        return "PLAYER"
+        return "EL GANDOR FINAL ES PLAYER"
     }
     if(a[0]<a[1]){
         console.log(`PC: ${a[1]}`)
         console.log(`TU: ${a[0]}`)
         console.log("TU PIERDES")
-        return "PC"
+        return "EL GANADOR FINAL ES PC"
+    }
+
+    if(a[0] == a[1]){
+        return "NO HAY GANADOR ES UN EMPATE"
     }
 }
 
@@ -123,7 +127,7 @@ botones.forEach((btn)=>{
                 btn.disabled=true
             })
             let ganador = final(puntaje_jugadores)
-            mensaje.textContent = `EL GANADOR FINAL ES: ${ganador}`
+            mensaje.textContent = `${ganador}`
         }
     })
 })
