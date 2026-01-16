@@ -16,6 +16,8 @@ const campo = document.querySelector(".campo")
 const ronda = document.querySelector(".ronda")
 const marcador = document.querySelector(".marcador")
 const elecciones = document.querySelector(".elecciones")
+const ilustracion = document.querySelector(".ilustracion")
+const img = document.createElement("img")
 const mensaje  = document.querySelector(".mensaje")
 
 let contador = 1
@@ -95,7 +97,7 @@ function final(a){
         console.log(`PC: ${a[1]}`)
         console.log(`TU: ${a[0]}`)
         console.log("TU GANAS")
-        return "EL GANDOR FINAL ES PLAYER"
+        return "EL GANADOR FINAL ES PLAYER"
     }
     if(a[0]<a[1]){
         console.log(`PC: ${a[1]}`)
@@ -120,6 +122,13 @@ botones.forEach((btn)=>{
         PLAYER: ${puntaje_humano}`
         elecciones.textContent =`Su eleccion es: ${valor}
         La eleccion de la Pc es: ${computerSelection}`
+        img.src = "https://media.tenor.com/UA5nyBLYVnMAAAAM/henry-stickmin-rock-paper-scissors.gif"
+        img.alt = "imagen"
+        img.style.height = "260px"
+        img.style.width = "auto"
+        img.style.display = "block"
+        img.style.marginInline = "auto"
+        ilustracion.append(img)
         mensaje.textContent = `${comparacion} esta ronda`
         contador++
         if(contador >= 6){
@@ -127,6 +136,13 @@ botones.forEach((btn)=>{
                 btn.disabled=true
             })
             let ganador = final(puntaje_jugadores)
+            img.src = "https://cdn.pixabay.com/animation/2024/04/14/02/43/02-43-38-360_512.gif"
+            img.alt = "imagen finalizado"
+            img.style.height = "260px"
+            img.style.width = "auto"
+            img.style.display = "block"
+            img.style.marginInline = "auto"
+            ilustracion.append(img)
             mensaje.textContent = `${ganador}`
         }
     })
