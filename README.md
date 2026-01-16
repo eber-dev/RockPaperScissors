@@ -1,2 +1,2 @@
 # RockPaperScissors
-Juego de Piedra, Papel o Tijera en consola 
+El clasico juego de Piedra Papel o Tijera
