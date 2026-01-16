@@ -13,7 +13,6 @@ body{
 .container{
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
     height: 100%;
     width: 100%;
 }
@@ -25,7 +24,6 @@ body{
 
 .figura{
     display: flex;
-    border: 1px solid black;
     justify-content: center;
 }
 
@@ -34,13 +32,11 @@ body{
     height: auto;
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 1px solid blue;
 }
 
 .container2{
     display: flex;
     flex-direction: row ;
-    border: 1px solid black;
     justify-content: space-around;
     margin-inline: 25%;
 }
@@ -53,20 +49,39 @@ body{
 }
 
 .campo{
-    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
 }
 
 .ronda{
-    border: 1px solid black;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 28px;
+
 }
 
 .marcador{
-    border: 1px solid black;
     white-space: pre-line;
+    margin: 20px;
+    line-height: 1.5;
+    font-size: 22px;
 }
 
 .elecciones{
-    border: 1px solid black;
     white-space: pre-line;
+    text-align: center;
+    line-height: 1.5;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+
+}
+
+.mensaje{
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 22px;
 }
 
